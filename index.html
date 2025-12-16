@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial scale=1.0">
-        <h1 class="bhawan-title">Himalaya Bhawan</h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"</>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     </head>
     <body>
         <div id="header">
+            <h1 class="bhawan-title">Himalaya Bhawan</h1>
             <div class="container">
                 <nav>
                     <div class="logo-wrap">
@@ -26,10 +26,6 @@
                     </ul>
                     <i class="fa-solid fa-bars" onclick="openmenu()"></i>
                 </nav>
-                <div class="header-text">
-                    <p>Indian Institue of Technology, Roorkee</p> 
-                    <h1><span>Himalaya Bhawan </span></h1> 
-                </div>
             </div>
         </div>
         <!--about-->
@@ -40,14 +36,13 @@
                         <div class="gallery-wrapper">
                             <div class="gallery">
                                 <div class="slider-image">
-                                    <img src="images/gallery/gallery1.png" class="img-slide active">
-                                    <img src="images/gallery/gallery2.png" class="img-slide">
-                                    <img src="images/gallery/gallery3.png" class="img-slide">
-                                    <img src="images/gallery/gallery4.png" class="img-slide">
-                                    <img src="images/gallery/gallery5.png" class="img-slide">
-                                    <img src="images/gallery/gallery6.png" class="img-slide">
-                                    <img src="images/gallery/gallery7.png" class="img-slide">
-                                    <img src="images/gallery/gallery8.png" class="img-slide">
+                                    <img src="images/Gallery/gallery1.png" class="img-slide active">
+                                    <img src="images/Gallery/gallery2.png" class="img-slide">
+                                    <img src="images/Gallery/gallery4.png" class="img-slide">
+                                    <img src="images/Gallery/gallery5.png" class="img-slide">
+                                    <img src="images/Gallery/gallery6.png" class="img-slide">
+                                    <img src="images/Gallery/gallery7.png" class="img-slide">
+                                    <img src="images/Gallery/gallery8.png" class="img-slide">
 
                                     <!-- arrows -->
                                     <span class="arrow left" onclick="prevSlide()">&#10094;</span>
@@ -58,6 +53,10 @@
                                         <span onclick="goToSlide(0)" class="dot active"></span>
                                         <span onclick="goToSlide(1)" class="dot"></span>
                                         <span onclick="goToSlide(2)" class="dot"></span>
+                                        <span onclick="goToSlide(3)" class="dot"></span>
+                                        <span onclick="goToSlide(4)" class="dot"></span>
+                                        <span onclick="goToSlide(5)" class="dot"></span>
+                                        <span onclick="goToSlide(6)" class="dot"></span>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +64,7 @@
                     </div>
                     <div class="about-col-2">
                         <h1 class="sub-title">About Himalaya Bhawan</h1>
-                        <p>Himalaya Bhawan is one of the newest hostels of IIT Roorkee, designed to offer a modern, comfortable, and inclusive living environment for students. Inspired by the strength and resilience of the Himalayas, the Bhawan reflects a blend of contemporary infrastructure and community-oriented spaces. <br> <br>Established in 2023, Himalaya Bhawan houses students across multiple floors and is equipped with essential facilities including a dining mess, canteen, guest rooms, common recreational areas, laundry facilities, and high-speed wired internet connectivity. With lift access and eco-friendly design elements, the Bhawan focuses on convenience, sustainability, and student well-being.</p>
+                        <p>Himalaya Bhawan is one of the newest girls hostels of IIT Roorkee, designed to offer a modern, comfortable, and inclusive living environment for students. Inspired by the strength and resilience of the Himalayas, the Bhawan reflects a blend of contemporary infrastructure and community-oriented spaces. <br> <br>Established in 2023, Himalaya Bhawan houses students across multiple floors and is equipped with essential facilities including a dining mess, canteen, guest rooms, common recreational areas, laundry facilities, and high-speed wired internet connectivity. With lift access and eco-friendly design elements, the Bhawan focuses on convenience, sustainability, and student well-being.</p>
                     </div>
                 </div>    
             </div>
@@ -76,31 +75,66 @@
                 <!-- SLIDER -->
                 <div class="stats-slider" id="statsSlider">
 
-                <!-- Slide 1 : Accommodation -->
-                <div class="stats-slide">
-                    <h4>BHAWAN TOTAL ACCOMMODATION</h4>
-                    <h1>2366</h1>
-                    <p>B.Tech + M.Tech + PhD</p>
-                </div>
+                    <!-- Slide 1 : Accommodation -->
+                    <div class="stats-slide">
+                        <h2>BHAWAN TOTAL ACCOMMODATION</h2>
+                        <h1>781</h1>
+                        <p>B.Tech + M.Tech + PhD</p>
+                    </div>
 
-                <!-- Slide 2 : Infrastructure -->
-                <div class="stats-slide">
-                    <h2>INFRASTRUCTURE HIGHLIGHTS</h2>
-                    <ul class="infra-list">
-                    <li><i class="fa-solid fa-wifi"></i> High-speed LAN</li>
-                    <li><i class="fa-solid fa-elevator"></i> Lift Access</li>
-                    <li><i class="fa-solid fa-bolt"></i> Power Backup</li>
-                    <li><i class="fa-solid fa-fire-extinguisher"></i> Fire Safety</li>
-                </ul>
-                </div>
+                    <!-- Slide 2 : Infrastructure -->
+                    <div class="stats-slide">
+                        <h2>INFRASTRUCTURE</h2>
+                        <ul class="infra-list">
+                            <li>
+                                <i class="fa-solid fa-wifi"></i>
+                                <span>High Speed<br>LAN</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-elevator"></i>
+                                <span>Lift<br>Access</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Power<br>Backup</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-fire-extinguisher"></i>
+                                <span>Fire<br>Safety</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <!-- Slide 3 : Achievements -->
-                <div class="stats-slide">
-                    <h2>ACHIEVEMENTS</h2>
-                    <p>Bhawan Day 2025 – First Prize</p>
-                    <p>Udbhav 2024 – Girls GC</p>
-                </div>
+                    <!-- Slide 3 : Highlights -->
+                    <div class="stats-slide highlights-slide">
+                        <h2>RECENT EVENTS HIGHLIGHTS</h2>
 
+                        <div class="highlights-wrapper">
+
+                            <div class="highlight-item active">
+                                <img src="images/highlights/highlight1.png" class="highlight-img">
+                                <div class="highlight-caption">Diwali Celebration</div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <img src="images/highlights/highlight2.png" class="highlight-img">
+                                <div class="highlight-caption">Bhawan Day Celebration</div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <img src="images/highlights/highlight3.png" class="highlight-img">
+                                <div class="highlight-caption">UDBHAV : Intra-Bhawan Sports Meet</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="highlights-dots">
+                            <span class="h-dot active" onclick="showHighlight(0)"></span>
+                            <span class="h-dot" onclick="showHighlight(1)"></span>
+                            <span class="h-dot" onclick="showHighlight(2)"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- ARROWS -->
@@ -173,10 +207,10 @@
                         <i class="fa-solid fa-shirt"></i>
                         <h2>Laundry</h2>
                         <p>
-                            Himalaya Bhawan provides a dedicated laundry facility for residents to manage their clothing needs.
-                            The facility supports a structured and time-saving washing process.
-                            A paid dhobi service is also available for additional convenience.
-                            The laundry setup is designed to ensure ease of use for inmates.
+                            Himalaya Bhawan’s laundry facility supports residents in managing their clothing and daily washing needs.
+                            It provides a structured and time-saving washing process for regular use.
+                            The facility helps students maintain their clothing conveniently and efficiently.
+                            It is located within the Bhawan premises and is easily accessible.
                         </p>
                         <details class="learn-more">
                             <summary>Learn more</summary>
@@ -268,8 +302,11 @@
                         <details class="learn-more">
                             <summary>Learn more</summary>
                             <div class="extra-info">
-                                <strong>Tariff:</strong> ₹500 per day<br>
-                                <strong>Booking:</strong> Via official hostel booking link
+                                <strong>Charges:</strong><br><br>
+                                AC double seater (with WC) = Rs 900<br>
+                                AC single seater (with WC) = Rs 700<br>
+                                Non AC single seater (without attached WC) = Rs 200<br><br>
+                                <strong>Booking:</strong><br><br> Via official hostel booking link
                             </div>
                         </details>
                     </div>
@@ -285,7 +322,7 @@
                 <div class="work-list">
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/chiefwarden.png">
+                            <img src="images/Team/chiefwarden.png">
                             <div class="layer">
                                 <h2 class="name">Prof. Sonal Atreya</h2>
                                 <p><br>Department of Architecture & Planning<br>sonal.atreya@ar.iitr.ac.in<br>+91 1332284882</p>
@@ -300,7 +337,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/warden.png">
+                            <img src="images/Team/warden.png">
                             <div class="layer">
                                 <h2 class="name">Prof. Roopam Shukla</h2>
                                 <p><br>Centre of Excellence in Disaster Mitigation & Management<br>roopam.shukla@dm.iitr.ac.in<br>+91 9582504912</p>
@@ -315,7 +352,22 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/assistantwarden1.png">
+                            <img src="images/Team/wellnesssecy.png">
+                            <div class="layer">
+                                <h2 class="name">Bindu Jatoth</h2>
+                                <p><br>B.Tech Computer Science & Engineering<br>bindu_j@cs.iitr.ac.in<br>+91 9391090754</p>
+                                <a href="mailto:bindu_j@cs.iitr.ac.in">
+                                    <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h4 class="role">Wellness Warden</h4>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <div class="img-wrap">
+                            <img src="images/Team/assistantwarden1.png">
                             <div class="layer">
                                 <h2 class="name">Shivangi Patel</h2>
                                 <p><br>Ph.D Humanities & Social Sciences<br>shivangi_p@hs.iitr.ac.in<br>+91 6398544622</p>
@@ -330,10 +382,10 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/assistantwarden2.png">
+                            <img src="images/Team/assistantwarden2.png">
                             <div class="layer">
                                 <h2 class="name">Komal Bana</h2>
-                                <p><br>Ph.D Biotechnology Department<br>komal_b@bt.iitr.ac.in<br>+91 6398544622</p>
+                                <p><br>Ph.D Department of Biosciences and Bioengineering<br>komal_b@bt.iitr.ac.in<br>+91 9971071079</p>
                                 <a href="mailto:komal_b@bt.iitr.ac.in">
                                     <i class="fa-solid fa-up-right-from-square"></i>
                                 </a>
@@ -345,22 +397,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/wellnesssecy.png">
-                            <div class="layer">
-                                <h2 class="name">Bindu Jatoth</h2>
-                                <p><br>B.Tech Computer Science & Engineering<br>bindu_j@cs.iitr.ac.in<br>+91 9391090754</p>
-                                <a href="mailto:bindu_j@cs.iitr.ac.in">
-                                    <i class="fa-solid fa-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="work-info">
-                            <h4 class="role">Wellness Secretary</h4>
-                        </div>
-                    </div>
-                    <div class="work">
-                        <div class="img-wrap">
-                            <img src="images/team/bhawansecy.png">
+                            <img src="images/Team/bhawansecy.png">
                             <div class="layer">
                                 <h2 class="name">Sarayu Karnam</h2>
                                 <p><br>B.Tech Mechanical Engineering<br>sarayu_k@me.iitr.ac.in<br>+91 7842847838</p>
@@ -375,7 +412,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/maintenancesecy.png">
+                            <img src="images/Team/maintenancesecy.png">
                             <div class="layer">
                                 <h2 class="name">Sanmaya E M</h2>
                                 <p><br>B.Tech Electronics & Communication Engineering<br>sanmaya_em@ece.iitr.ac.in<br>+91 8861326665</p>
@@ -390,7 +427,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/messsecy.png">
+                            <img src="images/Team/messsecy.png">
                             <div class="layer">
                                 <h2 class="name">Shweta Choudhary</h2>
                                 <p><br>Ph.D Chemistry Department<br>shweta_c@cy.iitr.ac.in<br>+91 7015195622</p>
@@ -405,7 +442,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/cultsecy.png">
+                            <img src="images/Team/cultsecy.png">
                             <div class="layer">
                                 <h2 class="name">Soumya Sharma</h2>
                                 <p><br>B.Tech Civil Engineering<br>soumya_s@ce.iitr.ac.in<br>+91 7489700198</p>
@@ -420,7 +457,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/techsecy.png">
+                            <img src="images/Team/techsecy.png">
                             <div class="layer">
                                 <h2 class="name">Sakshi Kumari</h2>
                                 <p><br>B.Tech Mechanical Engineering<br>sakshi_k@me.iitr.ac.in<br>+91 7061177802</p>
@@ -435,7 +472,7 @@
                     </div>
                     <div class="work">
                         <div class="img-wrap">
-                            <img src="images/team/sportssecy.png">
+                            <img src="images/Team/sportssecy.png">
                             <div class="layer">
                                 <h2 class="name">Visheshta</h2>
                                 <p><br>B.Tech Civil Engineering<br>visheshta@ce.iitr.ac.in<br>+91 9306671110</p>
@@ -459,40 +496,46 @@
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Us</h1>
 
-                    <div class="contact-block">
-                        <p>
-                            <strong>Himalaya Bhawan</strong><br>
-                            Near Department of Mathematics<br>
-                            Indian Institute of Technology, Roorkee<br>
-                            Roorkee – 247667<br>
-                            Uttarakhand, India
-                        </p>
-                    </div>
-
                     <div class="contact-info">
-                        <p>
-                            <span class="iglogo">
-                                <i class="fa-brands fa-instagram"></i>
-                            </span>
+
+                        <!-- Address -->
+                        <div class="contact-row">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="contact-text">
+                                Himalaya Bhawan, VIP Road<br>
+                                Indian Institute of Technology, Roorkee<br>
+                                Roorkee - 247667<br>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="contact-row">
+                            <i class="fa-brands fa-instagram"></i>
                             <a href="https://www.instagram.com/himalaya_bhawan/"
                             target="_blank"
-                            class="contact-link insta-link">
+                            class="contact-link">
                                 himalaya_bhawan
                             </a>
-                        </p>
-                        <p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-row">
                             <i class="fa-solid fa-envelope"></i>
                             <a href="mailto:himalayabhawan@iitr.ac.in" class="contact-link">
                                 himalayabhawan@iitr.ac.in
                             </a>
-                        </p>
-                        <p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-row">
                             <i class="fa-solid fa-phone"></i>
                             <a href="tel:01332284056" class="contact-link">
                                 01332-284056
                             </a>
-                        </p>
+                        </div>
+
                     </div>
+
                     <a href="https://forms.gle/rj53vLguswyR9LDA6" 
                         target="_blank" 
                         class="btn feedback-btn">
@@ -538,25 +581,6 @@
             }
         </script>
         <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyLm-SI0MGZZUYp7IXYFh6fWkcjlzJmDMKvmSRCyPyHKjFOnVHyaRdOdBmZoM4uK9-5/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = " "
-                },5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-        </script>
-
-        <script>
             document.querySelectorAll('.learn-more').forEach((detail) => {
                 detail.addEventListener('toggle', function () {
                     if (this.open) {
@@ -583,12 +607,15 @@
             slides[slideIndex].classList.add("active");
             dots[slideIndex]?.classList.add("active");
         }
+
         function nextSlide(){
             showSlide(slideIndex + 1);
         }
+
         function prevSlide(){
             showSlide(slideIndex - 1);
         }
+
         function goToSlide(n){
             showSlide(n);
         }
@@ -596,19 +623,67 @@
         <script>
             let statIndex = 0;
             const slider = document.getElementById("statsSlider");
+
             function updateSlider(){
                 slider.style.transform = `translateX(-${statIndex * 100}%)`;
             }
+
             function nextStat(){
                 statIndex = (statIndex + 1) % 3;
                 updateSlider();
             }
+
             function prevStat(){
                 statIndex = (statIndex - 1 + 3) % 3;
                 updateSlider();
             }
         </script>
+        <script>
+            let startX = 0;
+            let endX = 0;
+
+            const statsWrapper = document.querySelector('.stats-wrapper');
+
+            statsWrapper.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            statsWrapper.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+
+            function handleSwipe(){
+                const threshold = 50; // minimum swipe distance
+
+                if(startX - endX > threshold){
+                    // swipe left
+                    nextStat();
+                }
+                else if(endX - startX > threshold){
+                    // swipe right
+                    prevStat();
+                }
+            }
+        </script>
+        <script>
+            let highlightIndex = 0;
+            const highlightImgs = document.querySelectorAll('.highlight-item');
+            const highlightDots = document.querySelectorAll('.h-dot');
+
+            function showHighlight(n){
+                highlightImgs.forEach(img => img.classList.remove('active'));
+                highlightDots.forEach(dot => dot.classList.remove('active'));
+
+                highlightIndex = (n + highlightImgs.length) % highlightImgs.length;
+                highlightImgs[highlightIndex].classList.add('active');
+                highlightDots[highlightIndex].classList.add('active');
+            }
+        </script>
+
+
     </body>
+
 </html>
 
 
