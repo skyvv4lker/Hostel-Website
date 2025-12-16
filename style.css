@@ -15,7 +15,7 @@ body{
     width: 100%;
     height: 100vh;
     padding-top: 70px;
-    background-image: url(images/hostel.png);
+    background-image: url(images/hostel.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -58,7 +58,7 @@ nav ul li a{
     font-weight: 500;
 }
 nav ul li a::after{
-    content: ' ';
+    content: '';
     width: 0;
     height: 3px;
     background: #fda800;
@@ -81,12 +81,12 @@ nav ul li a:hover::after{
 /* ===== ANGLED HERO RIBBON ===== */
 /* ===== CLEAN LEFT-FLUSH BANNER ===== */
 .bhawan-title{
-    position: absolute;
-    bottom: 60px;
+    position :absolute;
+    bottom: 20px;
     left: 0;
 
-    background: #262626;      /* dark bar */
-    color: #fda800;           /* orange text */
+    background: linear-gradient(rgba(61, 61, 61, 0.6), #262525);
+    color: #ffffff;          
 
     padding: 22px 50px;
     font-size: 56px;
@@ -121,14 +121,51 @@ nav ul li a:hover::after{
 .about-col-1{
     flex-basis: 35%;
 }
-
 .about-col-2{
     flex-basis: 60%;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+@media (max-width: 768px){
+
+    #about{
+        padding: 60px 0;
+    }
+
+    .row{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-col-1,
+    .about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-2{
+        font-size: 15px;
+        line-height: 1.8;
+    }
 }
 
 /* ===== IMAGE SLIDER (LEFT COLUMN) ===== */
+@media (max-width: 768px){
+
+    .slider-image{
+        min-height: 260px;
+        max-height: 320px;
+        border-radius: 16px;
+    }
+
+    .img-slide{
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .slider-image{
-    flex: 1;                     /* MATCH height of right column */
+    height: 100%;
+    min-height: 320px;                   /* MATCH height of right column */
     position: relative;
     border-radius: 20px;
     overflow: hidden;
@@ -155,7 +192,6 @@ nav ul li a:hover::after{
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: rgba(0,0,0,0.55);
     color: #fff;
     font-size: 22px;
     display: flex;
@@ -171,6 +207,18 @@ nav ul li a:hover::after{
 .arrow:hover{
     background: rgba(0,0,0,0.75);
 }
+@media (max-width: 768px){
+
+    .arrow{
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .arrow.left{ left: 10px; }
+    .arrow.right{ right: 10px; }
+}
+
 
 /* Dots */
 .dots{
@@ -195,18 +243,61 @@ nav ul li a:hover::after{
 .dot:hover{
     background: #d27c3a;
 }
+@media (max-width: 768px){
 
-.about-col-2{
-    flex-basis: 60%;
-    margin-bottom: 20px;
-    line-height: 1.7;
+    .dot{
+        width: 9px;
+        height: 9px;
+        margin: 0 6px;
+    }
 }
+
 .sub-title{
     font-size: 40px;
     font-weight: 600;
     color: rgb(0, 0, 0);
     margin-bottom: 20px;
 }
+@media (max-width: 768px){
+
+    .sub-title{
+        font-size: 32px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+}
+@media (max-width: 480px){
+
+    .slider-image{
+        min-height: 220px;
+    }
+
+    .about-col-2{
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px){
+
+    .slider-image{
+        min-height: 220px;
+    }
+
+    .about-col-2{
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px){
+
+    .slider-image{
+        min-height: 220px;
+    }
+
+    .about-col-2{
+        font-size: 14px;
+    }
+}
+
+
 /* ===== Horizontal Stats Slider ===== */
 #bhawan-stats{
     background: #262626;
@@ -218,49 +309,107 @@ nav ul li a:hover::after{
     position: relative;
     max-width: 1100px;
     margin: auto;
+    overflow: hidden;           /* 🔒 prevents slide bleed */
 }
 
+
 .stats-slider{
+    align-items: stretch;
     display: flex;
     transition: transform 0.6s ease;
 }
 
-.stats-slide{
+.stats-slide {
     min-width: 100%;
+    flex-shrink: 0;
     text-align: center;
     color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;   /* 🔥 controlled spacing */
 }
+
+
 
 .stats-slide h4{
     font-size: 16px;
     letter-spacing: 1px;
     opacity: 0.8;
 }
+@media (max-width: 900px){
+    .stats-slide{
+        height: auto;
+        padding: 60px 40px;
+    }
+}
+
 .infra-list{
-    list-style: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
     margin-top: 20px;
 }
 
 .infra-list li{
-    font-size: 16px;
-    margin: 10px 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    opacity: 0.9;
+    gap: 30px;
 }
 
 .infra-list i{
+    font-size: 42px;
     color: #fda800;
-    font-size: 18px;
 }
+@media (max-width: 900px){
+    .infra-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        justify-items: center;
+        margin-top: 20px;
+    }
+
+    .infra-list li{
+        text-align: center;
+    }
+}
+@media (max-width: 600px){
+    .infra-list{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+@media (max-width: 900px){
+    .infra-list i{
+        font-size: 36px;
+    }
+
+    .infra-list span{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+.stats-wrapper{
+    touch-action: pan-y;
+}
+
 
 .stats-slide h1{
     font-size: 80px;
     margin: 20px 0;
     color: #fda800;
+}
+.stats-slide h2{
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .stats-slide p,
@@ -279,7 +428,7 @@ nav ul li a:hover::after{
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
+    background: #262626;
     color: #fff;
     border: none;
     font-size: 22px;
@@ -287,15 +436,32 @@ nav ul li a:hover::after{
 }
 
 .stats-arrow.left{
-    left: -60px;
+    left: 0px;
 }
 
 .stats-arrow.right{
-    right: -60px;
+    right : 10px;
 }
 
 .stats-arrow:hover{
     background: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 900px){
+    .stats-arrow{
+        display: none;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .stats-arrow.left{
+        left: -10px;
+    }
+
+    .stats-arrow.right{
+        right: -10px;
+    }
 }
 
 /* Mobile */
@@ -307,6 +473,131 @@ nav ul li a:hover::after{
         font-size: 56px;
     }
 }
+/* ===== HIGHLIGHTS SLIDE ONLY ===== */
+
+.highlights-slide{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;          /* 🔥 same horizontal alignment */
+    justify-content: space-between;  
+    gap: 16px;    /* 🔥 same vertical rhythm */
+}
+
+
+/* Image container */
+.highlights-wrapper{
+    flex: 1;
+    width: 42%;   
+    height: 100%;              
+    max-height: 100%;            
+    aspect-ratio: 16 / 7;        
+    border-radius: 26px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    background: #000;
+}
+
+/* Images */
+.highlight-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          
+    object-position: center;
+    display: block;     
+}
+
+.highlight-img.active{
+    display: block;
+}
+
+/* Dots */
+.highlights-dots{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.h-dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.h-dot.active{
+    background: #fda800;
+    opacity: 1;
+}
+
+/* Individual highlight slide */
+.highlight-item{
+    position: absolute;
+    inset: 0;
+    display: none;
+    overflow: hidden;
+}
+
+.highlight-item.active{
+    display: block;
+}
+
+/* Image */
+.highlight-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bottom gradient + text (hidden by default) */
+.highlight-caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 14px 20px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0)
+    );
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* SHOW ONLY ON HOVER */
+.highlight-item:hover .highlight-caption{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Mobile */
+@media (max-width: 768px){
+    .highlights-wrapper{
+        width: 88%;
+        aspect-ratio: 16 / 9;    /* slightly taller on phones */
+        border-radius: 18px;
+    }
+}
+@media (min-width: 1400px){
+    .highlights-wrapper{
+        max-width: 700px;
+    }
+}
+
 
 /*----facilities-----*/
 #facilities{
@@ -371,6 +662,18 @@ nav ul li a:hover::after{
     border-top: 1px solid #333;
     padding-top: 10px;
 }
+@media(max-width: 900px){
+    .facilities-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px){
+    .facilities-list{
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /*--------------team----------------*/
 #team{
@@ -490,6 +793,18 @@ nav ul li a:hover::after{
 .btn:hover{
     background: #d27c3a;
 }
+@media(max-width: 900px){
+    .work-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px){
+    .work-list{
+        grid-template-columns: 1fr;
+    }
+}
+
 /*-------contact--------*/
 /* ===== Contact Section (Map Layout) ===== */
 
@@ -515,6 +830,26 @@ nav ul li a:hover::after{
     color: #d5dbe5;
     font-size: 16px;
     line-height: 1.8;
+}
+.contact-row{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 14px 0;
+}
+
+.contact-row i{
+    width: 22px;          /* makes all icons align */
+    font-size: 18px;
+    color: #fda800;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.contact-text{
+    color: #d5dbe5;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 .contact-info{
@@ -694,5 +1029,6 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
