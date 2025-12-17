@@ -479,9 +479,9 @@ nav ul li a:hover::after{
     height: 350px;
     display: flex;
     flex-direction: column;
-    align-items: center;          /* 🔥 same horizontal alignment */
+    align-items: center;          /* same horizontal alignment */
     justify-content: space-between;  
-    gap: 16px;    /* 🔥 same vertical rhythm */
+    gap: 16px;    /* same vertical rhythm */
 }
 
 
@@ -598,12 +598,12 @@ nav ul li a:hover::after{
     }
 }
 
-
 /*----facilities-----*/
 #facilities{
     padding: 30px 0;
 }
 #facilities .sub-title{
+    margin-top: 50px;
     color: #000000;
     font-size: 60px;
     text-align: center;
@@ -616,22 +616,66 @@ nav ul li a:hover::after{
     margin-top: 50px;
 }
 .facilities-list div{
-    background: #262626;
+    background-color: #262626;
     padding : 40px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
 }
-.facilities-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
+.facility-card{
+    position: relative;
+    height: 280px;
+    border-radius: 18px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }
-.facilities-list div h2{
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
+/* dark overlay */
+.facility-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15) 30%,
+        rgba(0,0,0,0.75) 100%
+    );
+    z-index: 0;
 }
+
+.facility-card .facility-title{
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 33px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    color: #ffffff;
+    text-align: center;
+    z-index: 2;
+
+    margin: 0;              /* VERY IMPORTANT */
+    padding: 0;
+    white-space: nowrap;
+
+    text-shadow: 0 4px 14px rgba(0,0,0,0.7);
+}
+
+/* bring content above overlay */
+.facility-card *{
+    position: relative;
+    z-index: 1;
+}
+
+.facilities-list > div:not(.facility-card):hover{
+    background: #d27c3a;
+}
+
 .facilities-list div a{
     text-decoration: none;
     color: #fff;
@@ -639,10 +683,64 @@ nav ul li a:hover::after{
     margin-top: 20px;
     display: inline-block;
 }
-.facilities-list div:hover{
+.facilities-list div:not(.facility-card):hover{
     background: #d27c3a;
     transform: translateY(-10px);
 }
+
+.facility-card:hover{
+    background-color: transparent;
+    transform: translateY(-6px);
+}
+.facility-card:hover::before{
+    background: linear-gradient(
+        to bottom,
+        rgba(210,124,58,0.25),
+        rgba(0,0,0,0.8)
+    );
+}
+@media (max-width: 600px){
+    .facility-card .facility-title{
+        font-size: 28px;
+        bottom: 16px;
+    }
+}
+
+.mess{
+    background-image: url(images/facilities/mess.png);
+}
+
+.canteen{
+    background-image: url(images/facilities/canteen.png);
+}
+
+.study{
+    background-image: url(images/facilities/study.png);
+}
+
+.laundry{
+    background-image: url(images/facilities/laundry.png);
+}
+
+.stationery{
+    background-image: url(images/facilities/stationery.png);
+}
+
+.juice{
+    background-image: url(images/facilities/juice.png);
+}
+.salon{
+    background-image: url(images/facilities/salon.png);
+}
+
+.visitors{
+    background-image: url(images/facilities/visitors.png);
+}
+
+.guest{
+    background-image: url(images/facilities/guest.png);
+}
+
 .learn-more summary{
     cursor: pointer;
     color: #fda800;
@@ -671,6 +769,15 @@ nav ul li a:hover::after{
 @media(max-width: 600px){
     .facilities-list{
         grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px){
+    .facility-card{
+        height: 220px;
+    }
+
+    .facility-title{
+        font-size: 24px;
     }
 }
 
@@ -810,15 +917,14 @@ nav ul li a:hover::after{
 
 #contact{
     background:#262626;   /* deep institute blue */
-    padding-top: 80px;
-    padding-bottom: 0px;
+    padding: 60px 0;
 }
 
 .contact-container{
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
 }
 
 .contact-left .sub-title{
@@ -938,13 +1044,15 @@ nav ul li a:hover::after{
     text-decoration: underline;
 }
 
-/* Map */
 .contact-right iframe{
     width: 100%;
-    height: 380px;
+    height: 100%;
+    min-height: 320px;
+    max-height: 420px;   /* key line */
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
 }
+
 
 /* Responsive */
 @media (max-width: 900px){
@@ -1028,6 +1136,112 @@ nav .fa-solid{
     color: #61b752;
     margin-top: -40px;
     display: block;
+}
+
+/* ===== FACILITY MODAL ===== */
+.facility-modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 3000;
+    overflow-y: auto;
+}
+
+.facility-modal-content{
+    background: #262626;
+    color: #fff;
+    max-width: 700px;
+    width: 90%;
+    margin: auto;
+    margin-top: 8vh;
+    padding: 35px;
+    border-radius: 18px;
+    position: relative;
+}
+
+.facility-modal-content h2{
+    margin-bottom: 16px;
+    font-size: 32px;
+    color: #fda800;
+}
+
+.facility-modal-content{
+    background: #262626;
+    color: #fff;
+
+    max-width: 900px;     /* ⬅ increased */
+    width: 92%;
+
+    margin: auto;
+    margin-top: 6vh;
+
+    padding: 40px;
+    border-radius: 22px;
+    position: relative;
+}
+.facility-modal-content p{
+    line-height: 1.8;
+    font-size: 15px;
+    color: #e5e5e5;
+}
+
+.facility-modal-content p strong{
+    color: #fda800;
+}
+
+.facility-close{
+    position: absolute;
+    right: 22px;
+    top: 16px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fda800;
+}
+
+.modal-body{
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;  /* ⬅ image gets more width */
+    gap: 36px;
+    margin-top: 24px;
+    align-items: center;              /* ⬅ vertical alignment fix */
+}
+
+.modal-right img{
+    width: 100%;
+    height: 100%;
+    max-height: 320px;        /* ⬅ controls image height */
+    object-fit: cover;        /* ⬅ no stretching */
+    border-radius: 18px;
+}
+
+.modal-section{
+    margin-top: 16px;
+}
+
+.modal-section h4{
+    color: #fda800;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+@media(max-width: 700px){
+    .facility-modal-content{
+        padding: 26px;
+    }
+
+    .modal-body{
+        grid-template-columns: 1fr;
+    }
+
+    .modal-right img{
+        max-height: 240px;
+    }
+}
+#additionalSection{
+    background: rgba(253,168,0,0.12);
+    border-left: 4px solid #fda800;
+    padding: 12px 14px;
+    border-radius: 6px;
 }
 
 
