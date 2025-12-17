@@ -1196,9 +1196,11 @@ nav .fa-solid{
     top: 16px;
     font-size: 28px;
     cursor: pointer;
+    color: #ffffff;
+}
+.facility-close:hover{
     color: #fda800;
 }
-
 .modal-body{
     display: grid;
     grid-template-columns: 1fr 1.3fr;  /* ⬅ image gets more width */
